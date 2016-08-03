@@ -14,10 +14,10 @@
 \frenchspacing
 \setlength{\pdfpagewidth}{8.5in}
 \setlength{\pdfpageheight}{11in}
-\setlength{\titlebox}{3in}
+\setlength{\titlebox}{3.5in}
 \pdfinfo{
 /Title (Playable Experiences at AIIDE 2016)
-/Author (Alexander Zook, Michael Cook, Matthew Guzdial, Mark Riedl, Eric Butler, Kristin Siu, James Ryan, Ben Samuel, Adam Summerville, Michael Mateas, Noah Wardrip-Fruin)}
+/Author (Alexander Zook, Michael Cook, Eric Butler, Kristin Siu, Matthew Guzdial, Mark Riedl, James Ryan, Ben Samuel, Adam Summerville, Michael Mateas, Noah Wardrip-Fruin)}
 \setcounter{secnumdepth}{0}  
  \begin{document}
 
@@ -25,21 +25,36 @@
 \title{Playable Experiences at AIIDE 2016}
 \author{
 Alexander Zook \\ Georgia Institute of Technology \\ a.zook@gatech.edu
-\And Michael Cook \\ Falmouth University \\ mike@gamesbyangelina.org
-\AND Eric Butler \and Kristin Siu \\ Golden Glitch Studios \\ hello@goldenglitch.com
-\And Matthew Guzdial \and Mark Riedl \\ Georgia Institute of Technology \\ \{mguzdial3, riedl\}@gatech.edu \\
-\AND James Ryan \and Ben Samuel \and Adam Summerville \and Michael Mateas \and Noah Wardrip-Fruin \\ University of California, Santa Cruz \\ \{jor, bsamuel, mchaelm, nwf\}@soe.ucsc.edu, asummerv@ucsc.edu \\
+\And Michael Cook \\ \textit{Rogue Process} \\ Cut Garnet Games \\ cutgarnet@gmail.com
+\AND Eric Butler \and Kristin Siu \\ \textit{Elsinore} \\ Golden Glitch Studios \\ hello@goldenglitch.com
+\And Matthew Guzdial \and Mark Riedl \\ \textit{Conceptually Blended Levels in a Unity Engine} \\ Georgia Institute of Technology \\ \{mguzdial3, riedl\}@gatech.edu \\
+\AND James Ryan \and Ben Samuel \and Adam Summerville \and Michael Mateas \and Noah Wardrip-Fruin \\ \textit{Bad News} \\ University of California, Santa Cruz \\ \{jor, bsamuel\}@soe.ucsc.edu, asummerv@ucsc.edu, \{mchaelm, nwf\}@soe.ucsc.edu  \\
 }
 
 
 \maketitle
 \begin{abstract}
-We overview the AIIDE 2016 Playable experiences track goals and summarize the four entries for 2016.
-Each highlights unique opportunities for AI to be the focal point of a playable experience, from simulations to prepare an experience to active systems altering characters and contexts during play.
+The AIIDE Playable Experiences track celebrates innovations in how AI can be used in polished interactive experiences.
+Four 2016 accepted submissions display a diversity of approaches. 
+\textit{Rogue Process} combines techniques for medium-permanence procedurally generated hacking worlds.
+\textit{Elsinore} applies temporal predicate logic to enable a time-traveling narrative with character simulation.
+A novel level generator uses conceptual blending to translate \textit{Mario Bros.} design styles across levels.
+And \textit{Bad News} uses deep simulation of a town and it's residents to ground a mixed-reality performance.
+Together these playable experiences showcase the opportunities for AI in interactive experiences.
 \end{abstract}
 
-\noindent AIIDE PE is to celebrate novel applications of AI to games
-...
+\noindent AIIDE playable experiences submissions showcase innovations in using AI to create interactive experiences.
+Traditionally AI is a secondary consideration, used to support an existing interactive experience.
+Yet AI can enable novel interactive experiences using existing AI techniques and even foster innovations in AI techniques to produce new kinds of playable experiences.
+The playable experiences track celebrates these efforts and emphasizes the development of polished experiences that can be played by novice users---demonstrating the potential for AI to reach a broad audience.
+
+The 2016 AIIDE Playable Experiences track (chaired by Alex Zook) includes four entries that demonstrate a breadth of experience domains and AI techniques.
+AI can provide a unique setting for interaction: \textit{Bad News} simulates the history of a small town, down to the level of characters, to seed a live performance; \textit{Rogue Process} generates fictional corporations and their skyscraper offices; and a conceptual blending approach learns about \textit{Mario Bros.} level designs from data and applies design motifs to new levels.
+Alternatively, AI can drive the experience itself: \textit{Elsinore} simulates character knowledge while accounting for time-travel on the part of the player.
+Just as the interactive domains are diverse, so are the AI techniques: conceptual blending on \textit{Mario Bros.} level data; logic-driven catalogs to assemble skyscrapers in \textit{Rogue Process}; temporal predicate logic to schedule and update characters' mental state in \textit{Elsinore}; and a deep simulation for small town life in \textit{Bad News}.
+
+In the following sections the creators discuss their approaches to using AI to foster novel interactive experiences.
+
 
 \section{Rogue Process}
 
@@ -51,7 +66,7 @@ Each highlights unique opportunities for AI to be the focal point of a playable 
 \end{figure}
 
 
-\textit{Rogue Process} (Figure~\ref{fig:rp-setting}) is an action hacking game about running through skyscrapers at high speeds and hacking their security networks in slow motion.
+\textit{Rogue Process}\footnote{\url{http://www.rogueprocess.run}, or on Twitter @rogue\_process} (Figure~\ref{fig:rp-setting}) is an action hacking game about running through skyscrapers at high speeds and hacking their security networks in slow motion.
 You play as a renegade hacker who makes their living stealing dark corporate secrets hidden away in the tops of skyscrapers.
 It's being made by Michael Cook, with art and animation by Marsh Davies.
 Music is currently courtesy of Strangelette.
@@ -61,21 +76,19 @@ Skyscrapers are procedurally generated using logic-driven catalogue systems that
 They also allow for subtle emergent gameplay scenarios to emerge, because different room types offer different affordances to the player, allowing them to find alternate routes through a building, or solve problems in unexpected ways.
 A chemical storage warehouse might be hacked to vent fuel into a room situated beneath it, which can then be set alight by a power surge sent to a cleaning robot, blowing an otherwise locked door off its hinges.
 
-The worldbuilding of \textit{Rogue Process} is also heavily reliant on procedural systems.
+The worldbuilding of \textit{Rogue Process} is heavily reliant on procedural systems.
 Every building has a corporate owner, with a slogan, logo, specialism, name and relationship in the world generated through a combination of systems and approaches.
-We're exploring the idea of `medium-permanence' PCG, where content is generated for an individual player, but it persists across multiple playthroughs, allowing the player to develop a longer-term relationship with the generated corporations instead of instantly discarding them.
-
+We're exploring the idea of `medium-permanence' PCG, where content is generated for an individual player, but persists across multiple playthroughs, allowing the player to develop a longer-term relationship with the generated corporations instead of instantly discarding them.
 Procedural generation extends throughout the game beyond these examples---the pedestrians in marketplaces, the ships in the background, the skylines they fly past.
 We want the game to feel rich and varied, procedurally lavished with little details.
 
 We're also using \textit{Rogue Process} as an opportunity to explore how procedural generation can be better supported in a developer workflow.
-\textit{Danesh}, a tool for exploring generative spaces, was born out of prototype tools made for \textit{Rogue Process}, and we hope to continue to learn and expand on these ideas while working on the game and encountering new problems.
+\textit{Danesh}, a tool for exploring generative spaces, was born out of prototype tools made for \textit{Rogue Process}, and we hope to continue to learn and expand on these ideas while working on the game and encountering new problems \cite{cook2016:danesh}.
 
 We're also hoping to just make a very fun game, and so we'd love you to come and play and tell us what you think.
 There's a lot of interesting design issues to be solved within the game, especially reconciling precision typing with fast action, but we're enjoying exploring these problems and talking about them with players.
 Visit us, have a go, and let us know what you think!
 
-You can find out more about the game at \url{http://www.rogueprocess.run}, or on Twitter @rogue\_process
 
 
 \section{Elsinore}
@@ -88,7 +101,7 @@ You can find out more about the game at \url{http://www.rogueprocess.run}, or on
 \end{figure}
 
 
-\textit{Elsinore} is a time-looping adventure game set in the world of William Shakespeare's \textit{Hamlet}.
+\textit{Elsinore}\footnote{\url{https://elsinore-game.com/}} is a time-looping adventure game set in the world of William Shakespeare's \textit{Hamlet}.
 Players take on the role of Ophelia, navigating their way through Castle Elsinore and observing the events of the tragedy unfold in real-time.
 Throughout the drama, Ophelia can acquire and present pieces of knowledge (called \textit{hearsay} in-game) to the other characters, influencing their beliefs and desires, changing the events that take place, and thus significantly affecting the final outcome.
 Ophelia is trapped in a time loop, repeating the events of the play over and over.
@@ -133,7 +146,6 @@ We are in the process of developing solver-powered design tools for automatic QA
 Exploiting the discrete, logical representation and event simulation, we are using off-the-shelf tools such as SMT solvers to reason about an abstracted version of the game.
 This allows us to answer game-design-relevant questions such as event reachability, and will hopefully support more sophisticated queries as development progresses.
 
-Information about the game can be found at \url{https://elsinore-game.com/}.
 
 
 
@@ -148,20 +160,20 @@ Information about the game can be found at \url{https://elsinore-game.com/}.
 
 We present a system that generates playable output in the style of \textit{Super Mario Bros.} using an unsupervised approach for concept blending models of level design.
 The concept blending requires a goal and a set of probabilistic models composed of probabilistic, spatial relationships between level components.
-The output of this approach is a blended probabilistic model that can be used for generation and evaluation.
+The output is a blended probabilistic model that can be used for generation and evaluation.
 The playable experience is a set of generated output from these blended models, along with their relative evaluations.
 
-We first introduced these probabilistc models in ``Towards Game Level Generation from Gameplay Videos'' \cite{guzdial2015:video-level-gen}.
+We introduced these probabilistc models in ``Towards Game Level Generation from Gameplay Videos'' \cite{guzdial2015:video-level-gen}.
 They are derived via a hierarchical, unsupervised clustering method that learns styles of levels and of level components from gameplay video.
 We have since extended these probabilistic models with concept blending \cite{guzdial2016:mario-blend}.
 Concept blending describes a process of merging disparate concepts into a blended whole, generally via mapping components of two concepts onto one another in order to reach some ``target'' concept.
 We make use of analogical reasoning to map relationships from one probabilistic model onto another in order to reach a specified target.
 The levels present in this demo represent the output of conceptually blended models with a variety of targets, including levels from the game \textit{Super Mario Bros.: The Lost Levels} and more abstract specifications such as ``underwater castle.''
 
-We encode the levels within a new, open-source \textit{Super Mario Bros.} Unity engine\footnote{\url{http://guzdial.com/unitySMB}}.
+We encode the levels in a new, open-source \textit{Super Mario Bros.} Unity engine\footnote{\url{http://guzdial.com/unitySMB}}.
 The engine allows us to encode levels that could not previously be played, including underwater levels, castle levels, and our own conceptually blended output.
-In addition the engine allows drag-and-drop changes to levels, multiple players, and multiple ``skins'' for each level (including \textit{Super Mario Bros.} and \textit{Super Mario World}).
-We hope that this engine will benefit the broader Game AI community.
+The engine also allows drag-and-drop changes to levels, multiple players, and multiple ``skins'' for each level (including \textit{Super Mario Bros.} and \textit{Super Mario World}).
+We hope this engine will benefit the broader Game AI community.
 
 To the best of our knowledge, this represents the first time that conceptually blended video game levels have been made playable at a public event.
 Despite the popularity of automatic level generation as a research topic, it is fairly unusual for the output of generators to be made publicly playable.
@@ -170,14 +182,28 @@ We hope that this demonstration inspires more level generation researchers to ma
 
 \section{Bad News}
 \subsection{Summary}
-\textit{Bad News} is a novel playable experience that combines procedural generation, deep simulation, and live performance. Players explore procedurally generated American small towns inhabited by detailed characters with simulated backstories. Whenever the player encounters a resident, an improvisational actor reveals himself to perform the character live, adhering to his or her generated personality, life history, and subjective beliefs. With \textit{Bad News}, we strive to showcase the humor, drama, and tragedy of everyday life.
+\textit{Bad News} is a novel playable experience that combines procedural generation, deep simulation, and live performance.
+Players explore procedurally generated American small towns inhabited by detailed characters with simulated backstories.
+Whenever the player encounters a resident, an improvisational actor reveals himself to perform the character live, adhering to his or her generated personality, life history, and subjective beliefs.
+With \textit{Bad News}, we strive to showcase the humor, drama, and tragedy of everyday life.
 
 
 \subsection{How To Play}
 
-It is the summer of 1979, and an unidentified resident of a small American town has died alone at home. The county mortician is responsible for identifying the body and notifying the next of kin, but a matter in a different part of the county demands his presence. Being occupied in this way, the mortician is forced to delegate this important task to his newly appointed assistant, the player. To carry out the task, the player must navigate the town and converse with its residents in order to obtain three crucial pieces of information, each of which can only be discovered by knowing the preceding piece: the identity of the deceased, given only the person's physical appearance and home; the identity of the next of kin, given the identity of the deceased and an explicit notion of a next of kin (that we provide); and the current location of the next of kin, given his or her identity and any other relevant information that the player has gathered. Finally, upon locating the next of kin, the player must notify him or her of the death. Throughout, she should remain discreet, so as to respect the privacy of the family.
+It is the summer of 1979, and an unidentified resident of a small American town has died alone at home.
+The county mortician is responsible for identifying the body and notifying the next of kin, but a matter in a different part of the county demands his presence.
+Being occupied in this way, the mortician is forced to delegate this important task to his newly appointed assistant, the player.
+To carry out the task, the player must navigate the town and converse with its residents in order to obtain three crucial pieces of information, each of which can only be discovered by knowing the preceding piece: the identity of the deceased, given only the person's physical appearance and home; the identity of the next of kin, given the identity of the deceased and an explicit notion of a next of kin (that we provide); and the current location of the next of kin, given his or her identity and any other relevant information that the player has gathered.
+Finally, upon locating the next of kin, the player must notify him or her of the death.
+Throughout, she should remain discreet, so as to respect the privacy of the family.
 
-The player sits on one side of a constructed model theatre (shown in Figure~\ref{fig:bn-model_theatre}), with a tablet computer, a notebook, and a pen. A live actor sits across from the player, hidden by the theatre's adjustable curtain; behind a permanent lower curtain, a hidden screen displays a special actor interface and a discreet microphone captures sound. Out of sight, a \textit{wizard} listens to the audio feed. Gameplay always begins at the death scene, where the actor reveals himself to play the mortician, who explains what has happened and what the player must now do. This happens diegetically and occurs as embodied face-to-face conversation; the purpose of this scene is to subtly tutorialize and to gently ease the player into both the diegesis and the live-action role-playing that the experience requires. Crucially, the mortician and the player collaborate to construct a believable backstory that the player can rely on when talking with residents in the town---after all, it would not be discreet to openly parade as the mortician's assistant. From here, the mortician disappears by deploying the curtain, and the player is left with the tablet computer (see Figure~\ref{fig:bn-player_interface}), which displays a player interface that initially describes her current location (including the body).
+The player sits on one side of a constructed model theatre (shown in Figure~\ref{fig:bn-model_theatre}), with a tablet computer, a notebook, and a pen.
+A live actor sits across from the player, hidden by the theatre's adjustable curtain; behind a permanent lower curtain, a hidden screen displays a special actor interface and a discreet microphone captures sound.
+Out of sight, a \textit{wizard} listens to the audio feed.
+Gameplay always begins at the death scene, where the actor reveals himself to play the mortician, who explains what has happened and what the player must now do.
+This happens diegetically and occurs as embodied face-to-face conversation; the purpose of this scene is to subtly tutorialize and to gently ease the player into both the diegesis and the live-action role-playing that the experience requires.
+Crucially, the mortician and the player collaborate to construct a believable backstory that the player can rely on when talking with residents in the town---after all, it would not be discreet to openly parade as the mortician's assistant.
+From here, the mortician disappears by deploying the curtain, and the player is left with the tablet computer (see Figure~\ref{fig:bn-player_interface}), which displays a player interface that initially describes her current location (including the body).
 
 \begin{figure}[t]
   \centering
@@ -187,7 +213,16 @@ The player sits on one side of a constructed model theatre (shown in Figure~\ref
   \label{fig:bn-player_and_actor}
 \end{figure}
 
-From here, the player proceeds by speaking commands aloud; the wizard executes these throughout the experience by live-coding modifications to the simulation in real time. Permissible commands include moving about the town (in a direction, or to an address), viewing a residential or business directory, approaching a character to engage in conversation, and more. As the player moves about the town, her interface updates to describe her current location. When a player approaches a town resident, the hidden actor interface updates to display details about that character's personality, life history, and subjective beliefs. After spending a few moments preparing for the role, the actor pulls back the curtain to play that character live. As the subject of conversation shifts between residents of the town, the wizard crucially updates the actor interface to display the character's beliefs about that particular resident. Meanwhile, the wizard queries the simulation for narrative intrigue (again by live-coding), which he can deliver to the actor directly through a live chat session (\textit{e.g.}, ``you went to high school with the subject''). Gameplay ends once the player notifies the next of kin of the death. A typical session lasts roughly 45 minutes, though the wizard and actor can coordinate in real time to control this. For more details, see our longer paper \cite{samuel2016bad}.
+From here, the player proceeds by speaking commands aloud; the wizard executes these throughout the experience by live-coding modifications to the simulation in real time.
+Permissible commands include moving about the town (in a direction, or to an address), viewing a residential or business directory, approaching a character to engage in conversation, and more.
+As the player moves about the town, her interface updates to describe her current location.
+When a player approaches a town resident, the hidden actor interface updates to display details about that character's personality, life history, and subjective beliefs.
+After spending a few moments preparing for the role, the actor pulls back the curtain to play that character live.
+As the subject of conversation shifts between residents of the town, the wizard crucially updates the actor interface to display the character's beliefs about that particular resident.
+Meanwhile, the wizard queries the simulation for narrative intrigue (again by live-coding), which he can deliver to the actor directly through a live chat session (\textit{e.g.}, ``you went to high school with the subject'').
+Gameplay ends once the player notifies the next of kin of the death.
+A typical session lasts roughly 45 minutes, though the wizard and actor can coordinate in real time to control this.
+For more details, see our longer paper \cite{samuel2016bad}.
 
 
 \subsection{Why To Play}
@@ -200,7 +235,18 @@ From here, the player proceeds by speaking commands aloud; the wizard executes t
   \label{fig:bn-model_theatre}
 \end{figure}
 
-\textit{Bad News} is appealing as a novel, AI-driven, and tender experience. While \textit{mixed reality} is a growing and fairly active area \cite{ohta2014mixed}, there are surprisingly few media works that specifically combine computation and live improvisation. In fact, we are aware of only two other examples of this---\textit{Coffee: A Misunderstanding} \cite{squinkifer2014coffee} and \textit{S\'{e}ance} \cite{seance}---though interest is growing \cite{martens2016towards}. Incidentally, \textit{S\'{e}ance} features our same actor, Ben Samuel, who appears to be the world's expert in improvisational acting under computational constraints; watching him perform in myriad roles is a core appeal of the experience. Beyond its novelty, this work is deeply AI-driven. Each \textit{Bad News} town is procedurally generated using the \textit{Talk of the Town} AI framework \cite{ryan2015toward}. Specifically, towns are simulated for 140 years of diegetic time, yielding hundreds of residents who are socially embedded and who harbor subjective beliefs about the town (which may be wrong for multiple interesting reasons). This provides an abundance of narrative material and dramatic intrigue (\textit{e.g.}, family feuds, love triangles, struggling businesses) that exceeds the capacities of a 45-minute playthrough and that could not have tractably been hand-authored. Several players have reported feeling like they were \textit{transported} to the generated towns that they visited \cite{green2004understanding}. Finally, \textit{Bad News} is a tender experience. As a game about death notification, it compels the player to be sincere and tactful---many have commented on the emotional intensity of their notification scenes. Set in run-of-the-mill American small towns, we strive in each playthrough, through acting and wizardry, to showcase the humor, drama, and tragedy of everyday life.
+\textit{Bad News} is appealing as a novel, AI-driven, and tender experience.
+While \textit{mixed reality} is a growing and fairly active area \cite{ohta2014mixed}, there are surprisingly few media works that specifically combine computation and live improvisation.
+In fact, we are aware of only two other examples of this---\textit{Coffee: A Misunderstanding} \cite{squinkifer2014coffee} and \textit{S\'{e}ance} \cite{seance}---though interest is growing \cite{martens2016towards}.
+Incidentally, \textit{S\'{e}ance} features our same actor, Ben Samuel, who appears to be the world's expert in improvisational acting under computational constraints; watching him perform in myriad roles is a core appeal of the experience.
+Beyond its novelty, this work is deeply AI-driven.
+Each \textit{Bad News} town is procedurally generated using the \textit{Talk of the Town} AI framework \cite{ryan2015toward}.
+Specifically, towns are simulated for 140 years of diegetic time, yielding hundreds of residents who are socially embedded and who harbor subjective beliefs about the town (which may be wrong for multiple interesting reasons).
+This provides an abundance of narrative material and dramatic intrigue (\textit{e.g.}, family feuds, love triangles, struggling businesses) that exceeds the capacities of a 45-minute playthrough and that could not have tractably been hand-authored.
+Several players have reported feeling like they were \textit{transported} to the generated towns that they visited \cite{green2004understanding}.
+Finally, \textit{Bad News} is a tender experience.
+As a game about death notification, it compels the player to be sincere and tactful---many have commented on the emotional intensity of their notification scenes.
+Set in run-of-the-mill American small towns, we strive in each playthrough, through acting and wizardry, to showcase the humor, drama, and tragedy of everyday life.
 
 \subsection{Where To Play}
 
@@ -211,8 +257,21 @@ From here, the player proceeds by speaking commands aloud; the wizard executes t
   \label{fig:bn-player_interface}
 \end{figure}
 
-Because the actor and wizard must both be present, \textit{Bad News} can only be played in person at scheduled performances. Though we have accommodated private requests, it is primarily intended as an exhibition piece. An early test incarnation was conducted at the 2015 Experimental AI in Games workshop in Santa Cruz \cite{ryan2015bad}, and more recently our refined, longer version was performed at the ACM Conference on Human Factors in Computing Systems (CHI) in San Jose \cite{ryan2016bad} and at Gamenest in San Francisco. The middle performance was part of the Innovative Game Design track of the CHI Student Game Competition, which \textit{Bad News} won.
+Because the actor and wizard must both be present, \textit{Bad News} can only be played in person at scheduled performances.
+Though we have accommodated private requests, it is primarily intended as an exhibition piece.
+An early test incarnation was conducted at the 2015 Experimental AI in Games workshop in Santa Cruz \cite{ryan2015bad}, and more recently our refined, longer version was performed at the ACM Conference on Human Factors in Computing Systems (CHI) in San Jose \cite{ryan2016bad} and at Gamenest in San Francisco.
+The middle performance was part of the Innovative Game Design track of the CHI Student Game Competition, which \textit{Bad News} won.
 
+
+
+
+\section{Conclusion}
+
+AIIDE is a meeting ground between entertainment software developers interested in AI and academic AI researchers.
+The playable experiences track is a core component of this interaction, showcasing how developers of all stripes (academic, from large-scale industry, or even smaller independent studios) can drive exciting innovations in how we use AI to create novel experiences.
+Submissions from the 2016 Playable Experiences track demonstrate the diverse ways AI has continued to foster innovation in interactive experiences at many scales and in many contexts.
+While challenges remain in enabling the development of these interactive experiences, the breadth of developments on display in the 2016 track highlight the potential impact of fostering this type of combined research and development work.
+We hope to see continued growth in innovative AI experiences as researchers stretch to create complete, polished interactive experiences and industry developers stretch to innovate in how AI is used when creating interactive experiences.
 
 
 %The following commands are available for your use in citing references:
