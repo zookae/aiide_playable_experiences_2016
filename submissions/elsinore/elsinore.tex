@@ -1,0 +1,39 @@
+Elsinore is a time-looping adventure game set in the world of William Shakespeare's Hamlet.
+Players take on the role of Ophelia, navigating their way through Castle Elsinore and observing the events of the tragedy unfold in real-time.
+Throughout the drama, Ophelia can acquire and present pieces of knowledge (called hearsay in-game) to the other characters, influencing their beliefs and desires, changing the events that take place, and thus significantly affecting the final outcome.
+Ophelia is trapped in a time loop, repeating the events of the play over and over.
+
+Elsinore combines hand-authored content and narrative simulation.
+Individual scenes are hand-written but scheduled using a logic-based simulation.
+The game state models the mental states of characters in a temporal predicate logic, and hand-authored events are preconditioned on these mental states.
+These events occur in real time in a 3D environment; thus the simulation must schedule these events to avoid temporal conflicts with rooms and NPCs.
+The player's primary tool, presenting hearsay, changes these mental states, and accordingly, which events may occur.
+
+The game's representation was chosen primarily to enable and assist the game experience.
+One of the player's primary challenges is understanding how to manipulate the behavior of the NPCs to avoid a tragic outcome.
+The NPC's mental states are exposed to the player.
+This information aids the player in piecing together the mystery of the characters' behaviors and motivations, and how the player's actions affect the events and the endings.
+
+The logic-based game state enables several AI techniques used to control the simulation, provide drama management, and support design tools.
+For the simulation, the game uses propositional theorem proving to ensure important events are not suppressed by scheduling conflicts with minor events.
+Events, by design, are non-interruptible once started.
+Many major events can only happen at very specific times.
+Therefore, if a minor event related to a sidequest were to be scheduled immediately before a major event and they both share a character or a room, the major event would be unable to occur.
+However, in the cases where major events don't happen due to player action, we ideally want minor events to fill those gaps.
+Therefore, our simulation schedules a minor event if, in addition to all typical preconditions, the game can prove that no conflicting major event could possibly happen within the duration of the minor event.
+Given the logical preconditions, and postconditions, the duration, and the resources for every event, a hand-written propositional theorem prover can determine whether a minor event should be allowed to happen.
+
+Our game also uses this logical model for minor drama management.
+While exploring the castle, the player may engage in idle conversations with other NPCs.
+These conversations cannot change the logical state, though, like the rest of game's dialogue, it is determined by logical state.
+We can use this idle conversation to guide the player.
+NPCs discuss relevant and topical information with the player, such as reactions to character deaths.
+They also often inform the player about important scenes that the player did not witness or remind them of upcoming important events.
+
+Finally, we are using AI to support our design workflow.
+Currently, our design tools are capable of visualizing game traces and performing static analysis of game scripts.
+We are in the process of developing solver-powered design tools for automatic QA and computational critics.
+Exploiting the discrete, logical representation and event simulation, we are using off-the-shelf tools such as SMT solvers to reason about an abstracted version of the game.
+This allows us to answer game-design-relevant questions such as event reachability, and will hopefully support more sophisticated queries as development progresses.
+
+Information about the game can be found at \url{https://elsinore-game.com/}.
