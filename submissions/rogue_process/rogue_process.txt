@@ -1,13 +1,31 @@
-Rogue Process is an action hacking game about running through skyscrapers at high speeds and hacking their security networks in slow motion. You play as a renegade hacker who makes their living stealing dark corporate secrets hidden away in the tops of skyscrapers. It's being made by Michael Cook, with art and animation by Marsh Davies. Music is currently courtesy of Strangelette. 
+Rogue Process is an action hacking game about running through skyscrapers at high speeds and hacking their security networks in slow motion.
+You play as a renegade hacker who makes their living stealing dark corporate secrets hidden away in the tops of skyscrapers.
+It's being made by Michael Cook, with art and animation by Marsh Davies.
+Music is currently courtesy of Strangelette.
 
-Most of Rogue Process takes place at the tops of skyscrapers, as the player breaks into various buildings in a city block to look for servers, prototypes and valuable data. Skyscrapers are procedurally generated using logic-driven catalogue systems that define the relationship between elements of a building and allow natural structures to form from these rules. They also allow for subtle emergent gameplay scenarios to emerge, because different room types offer different affordances to the player, allowing them to find alternate routes through a building, or solve problems in unexpected ways. A chemical storage warehouse might be hacked to vent fuel into a room situated beneath it, which can then be set alight by a power surge sent to a cleaning robot, blowing an otherwise locked door off its hinges.
 
-The worldbuilding of Rogue Process is also heavily reliant on procedural systems. Every building has a corporate owner, with a slogan, logo, specialism, name and relationship in the world generated through a combination of systems and approaches. We're exploring the idea of 'medium-permanence' PCG, where content is generated for an individual player, but it persists across multiple playthroughs, allowing the player to develop a longer-term relationship with the generated corporations instead of instantly discarding them. 
+Most of Rogue Process takes place at the tops of skyscrapers, as the player breaks into various buildings in a city block to look for servers, prototypes and valuable data.
+Skyscrapers are procedurally generated using logic-driven catalogue systems that define the relationship between elements of a building and allow natural structures to form from these rules.
+They also allow for subtle emergent gameplay scenarios to emerge, because different room types offer different affordances to the player, allowing them to find alternate routes through a building, or solve problems in unexpected ways.
+A chemical storage warehouse might be hacked to vent fuel into a room situated beneath it, which can then be set alight by a power surge sent to a cleaning robot, blowing an otherwise locked door off its hinges.
 
-Procedural generation extends throughout the game beyond these examples - the pedestrians in marketplaces, the ships in the background, the skylines they fly past. We want the game to feel rich and varied, procedurally lavished with little details.
 
-We’re also using Rogue Process as an opportunity to explore how procedural generation can be better supported in a developer workflow. Danesh, a tool for exploring generative spaces, was born out of prototype tools made for Rogue Process, and we hope to continue to learn and expand on these ideas while working on the game and encountering new problems.
+The worldbuilding of Rogue Process is also heavily reliant on procedural systems.
+Every building has a corporate owner, with a slogan, logo, specialism, name and relationship in the world generated through a combination of systems and approaches.
+We're exploring the idea of 'medium-permanence' PCG, where content is generated for an individual player, but it persists across multiple playthroughs, allowing the player to develop a longer-term relationship with the generated corporations instead of instantly discarding them.
 
-We're also hoping to just make a very fun game, and so we'd love you to come and play and tell us what you think. There's a lot of interesting design issues to be solved within the game, especially reconciling precision typing with fast action, but we're enjoying exploring these problems and talking about them with players. Visit us, have a go, and let us know what you think!
+
+Procedural generation extends throughout the game beyond these examples - the pedestrians in marketplaces, the ships in the background, the skylines they fly past.
+We want the game to feel rich and varied, procedurally lavished with little details.
+
+
+We're also using Rogue Process as an opportunity to explore how procedural generation can be better supported in a developer workflow.
+Danesh, a tool for exploring generative spaces, was born out of prototype tools made for Rogue Process, and we hope to continue to learn and expand on these ideas while working on the game and encountering new problems.
+
+
+We're also hoping to just make a very fun game, and so we'd love you to come and play and tell us what you think.
+There's a lot of interesting design issues to be solved within the game, especially reconciling precision typing with fast action, but we're enjoying exploring these problems and talking about them with players.
+Visit us, have a go, and let us know what you think!
+
 
 You can find out more about the game at http://www.rogueprocess.run, or on Twitter @rogue_process
