@@ -1,0 +1,23 @@
+Elsinore is a time-looping adventure game set in the world of William Shakespeare's Hamlet.
+Players take on the role of Ophelia, navigating their way through Castle Elsinore and observing the events of the tragedy unfold in real-time.
+Throughout the drama, Ophelia can acquire and present pieces of knowledge or hearsay to the other characters, influencing their beliefs and desires, changing the events that take place, and thus significantly affecting the final outcome.
+Ophelia is trapped in a time loop, repeating the events of the play over and over.
+
+Elsinore combines hand-authored content and narrative simulation.
+Individual scenes are hand-written but scheduled using a logic-based simulation.
+The game state models the mental states of characters in a temporal predicate logic, and hand-authored events are preconditioned on these mental states.
+These events occur in real time in a 3D environment; thus the simulation must schedule these events to avoid temporal conflicts with rooms and NPCs.
+The player's primary tool, presenting hearsay, changes these mental states, and accordingly, which events may occur.
+
+The game's representation was chosen primarily to enable and assist the game experience.
+One of the player's primary challenges is understanding how to manipulate the behavior of the NPCs to avoid a tragic outcome.
+The NPC's mental states are exposed to the player, giving them information to assist them in piecing together the mystery of the characters' behaviors and motivations and how the player's actions affect the events and the endings.
+
+The logic-based game state enables several AI techniques used to control the simulation, provide drama management, and support design tools.
+The game uses theorem proving to ensure important events are not suppressed by minor events and scheduling conflicts.
+The game's idle dialogue is predicated on this logical state, allowing NPCs to discuss relevant and topical information with the player.
+
+Our design tools are currently capable of replaying and visualizing simulation traces.
+We are also in the process of developing solver-powered design tools for automatic QA and computational critics.
+Exploiting the discrete, logical representation and event simulation, we use off-the-shelf solving tools to reason about an abstracted version of the game.
+This allows us to answer gameplay-relevant questions such as event reachability, and will, in the future, support more sophisticated queries.

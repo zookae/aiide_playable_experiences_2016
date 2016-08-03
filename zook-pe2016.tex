@@ -14,6 +14,7 @@
 \frenchspacing
 \setlength{\pdfpagewidth}{8.5in}
 \setlength{\pdfpageheight}{11in}
+\setlength{\titlebox}{3in}
 \pdfinfo{
 /Title (Playable Experiences at AIIDE 2016)
 /Author (Alexander Zook, Michael Cook, Matthew Guzdial, Mark Riedl, Eric Butler, Kristin Siu, James Ryan, Ben Samuel, Adam Summerville, Michael Mateas, Noah Wardrip-Fruin)}
@@ -22,11 +23,15 @@
 
 
 \title{Playable Experiences at AIIDE 2016}
-\author{AAAI Press\\
-Association for the Advancement of Artificial Intelligence\\
-2275 East Bayshore Road, Suite 160\\
-Palo Alto, California 94303\\
+\author{
+Alexander Zook \\ Georgia Institute of Technology \\ a.zook@gatech.edu
+\And Michael Cook \\ Falmouth University \\ mike@gamesbyangelina.org
+\AND Eric Butler \and Kristin Siu \\ Golden Glitch \\ \{zantifon, asaunta\}@gmail.com
+\And Matthew Guzdial \and Mark Riedl \\ Georgia Institute of Technology \\ \{mguzdial3, riedl\}@gatech.edu \\
+\AND James Ryan \and Ben Samuel \and Adam Summerville \and Michael Mateas \and Noah Wardrip-Fruin \\ University of California, Santa Cruz \\ \{jor, bsamuel, mchaelm, nwf\}@soe.ucsc.edu, asummerv@ucsc.edu \\
 }
+
+
 \maketitle
 \begin{abstract}
 We overview the AIIDE 2016 Playable experiences track goals and summarize the four entries for 2016.
@@ -41,8 +46,7 @@ Each highlights unique opportunities for AI to be the focal point of a playable 
 \begin{figure}[tbh]
   \centering
   \includegraphics[width=\columnwidth]{images/rogue_process-screen}
-%  \vspace{-2.0em}
-  \caption{Example generated skyscraper for the player to infiltrate.}
+  \caption{\textit{Rogue Process}: Example generated skyscraper for the player to infiltrate.}
   \label{fig:rp-setting}
 \end{figure}
 
@@ -74,6 +78,70 @@ Visit us, have a go, and let us know what you think!
 You can find out more about the game at \url{http://www.rogueprocess.run}, or on Twitter @rogue\_process
 
 
+\section{Elsinore}
+
+\begin{figure}[tbh]
+  \centering
+  \includegraphics[width=\columnwidth]{images/elsinore-screen}
+  \caption{\textit{Elsinore}: Example of player interacting with characters.}
+  \label{fig:el-setting}
+\end{figure}
+
+\textit{Elsinore} is a time-looping adventure game set in the world of William Shakespeare's \textit{Hamlet}.
+Players take on the role of Ophelia, navigating their way through Castle Elsinore and observing the events of the tragedy unfold in real-time.
+Throughout the drama, Ophelia can acquire and present pieces of knowledge or hearsay to the other characters, influencing their beliefs and desires, changing the events that take place, and thus significantly affecting the final outcome.
+Ophelia is trapped in a time loop, repeating the events of the play over and over.
+
+\textit{Elsinore} combines hand-authored content and narrative simulation.
+Individual scenes are hand-written but scheduled using a logic-based simulation.
+The game state models the mental states of characters in a temporal predicate logic, and hand-authored events are preconditioned on these mental states.
+These events occur in real time in a 3D environment; thus the simulation must schedule these events to avoid temporal conflicts with rooms and NPCs.
+The player's primary tool, presenting hearsay, changes these mental states, and accordingly, which events may occur.
+
+The game's representation was chosen primarily to enable and assist the game experience.
+One of the player's primary challenges is understanding how to manipulate the behavior of the NPCs to avoid a tragic outcome.
+The NPC's mental states are exposed to the player, giving them information to assist them in piecing together the mystery of the characters' behaviors and motivations and how the player's actions affect the events and the endings.
+
+The logic-based game state enables several AI techniques used to control the simulation, provide drama management, and support design tools.
+The game uses theorem proving to ensure important events are not suppressed by minor events and scheduling conflicts.
+The game's idle dialogue is predicated on this logical state, allowing NPCs to discuss relevant and topical information with the player.
+
+Our design tools are currently capable of replaying and visualizing simulation traces.
+We are also in the process of developing solver-powered design tools for automatic QA and computational critics.
+Exploiting the discrete, logical representation and event simulation, we use off-the-shelf solving tools to reason about an abstracted version of the game.
+This allows us to answer gameplay-relevant questions such as event reachability, and will, in the future, support more sophisticated queries.
+
+
+
+\section{Conceptually Blended Levels in a Unity Engine}
+
+\begin{figure}[tbh]
+  \centering
+  \includegraphics[width=\columnwidth]{images/conceptual_blend-screen}
+  \caption{\textit{Conceptually Blended Levels}: Example level and blend.}
+  \label{fig:cb-placeholder}
+\end{figure}
+
+We present a system that generates playable output in the style of \textit{Super Mario Bros.} using an unsupervised approach for concept blending models of level design.
+The concept blending requires a goal and a set of probabilistic models composed of probabilistic, spatial relationships between level components.
+The output of this approach is a blended probabilistic model that can be used for generation and evaluation.
+The playable experience is a set of generated output from these blended models, along with their relative evaluations.
+
+We first introduced these probabilistc models in ``Towards Game Level Generation from Gameplay Videos'' \cite{guzdial2015:video-level-gen}.
+They are derived via a hierarchical, unsupervised clustering method that learns styles of levels and of level components from gameplay video.
+We have since extended these probabilistic models with concept blending \cite{guzdial2016:mario-blend}.
+Concept blending describes a process of merging disparate concepts into a blended whole, generally via mapping components of two concepts onto one another in order to reach some ``target'' concept.
+We make use of analogical reasoning to map relationships from one probabilistic model onto another in order to reach a specified target.
+The levels present in this demo represent the output of conceptually blended models with a variety of targets, including levels from the game \textit{Super Mario Bros.: The Lost Levels} and more abstract specifications such as ``underwater castle.''
+
+We encode the levels within a new, open-source \textit{Super Mario Bros.} Unity engine\footnote{\url{http://guzdial.com/unitySMB}}.
+The engine allows us to encode levels that could not previously be played, including underwater levels, castle levels, and our own conceptually blended output.
+In addition the engine allows drag-and-drop changes to levels, multiple players, and multiple ``skins'' for each level (including \textit{Super Mario Bros.} and \textit{Super Mario World}).
+We hope that this engine will benefit the broader Game AI community.
+
+To the best of our knowledge, this represents the first time that conceptually blended video game levels have been made playable at a public event.
+Despite the popularity of automatic level generation as a research topic, it is fairly unusual for the output of generators to be made publicly playable.
+We hope that this demonstration inspires more level generation researchers to make output that is publicly playable.
 
 
 \section{Bad News}
@@ -91,7 +159,7 @@ The player sits on one side of a constructed model theatre (shown in Figure~\ref
   \centering
   \includegraphics[width=0.8\columnwidth]{images/bad_news-player_and_actor}
 %  \vspace{-2.0em}
-  \caption{A player, left, engages in embodied conversation with the actor, who improvisationally performs as a resident of the town.}
+  \caption{\textit{Bad News}: A player, left, engages in embodied conversation with the actor, who improvisationally performs as a resident of the town.}
   \label{fig:bn-player_and_actor}
 \end{figure}
 
@@ -104,8 +172,7 @@ From here, the player proceeds by speaking commands aloud; the wizard executes t
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.64\columnwidth]{images/bad_news-the_puppet_theatre}
-%  \vspace{-2.0em}
-  \caption{A constructed model theatre separates the player and our live actor.}
+  \caption{\textit{Bad News}: A constructed model theatre separates the player and our live actor.}
   \label{fig:bn-model_theatre}
 \end{figure}
 
@@ -116,8 +183,7 @@ From here, the player proceeds by speaking commands aloud; the wizard executes t
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.42\columnwidth]{images/bad_news-player_interface}
-%  \vspace{-2.0em}
-  \caption{Excerpt from a business directory for a procedurally generated town, as displayed on the player interface.}
+  \caption{\textit{Bad News}: Excerpt from a business directory for a procedurally generated town, as displayed on the player interface.}
   \label{fig:bn-player_interface}
 \end{figure}
 

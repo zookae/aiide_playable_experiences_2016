@@ -1,0 +1,20 @@
+We present a system that generates playable output in the style of Super Mario Bros. using an unsupervised approach for concept blending models of level design.
+The concept blending requires a goal and a set of probabilistic models composed of probabilistic, spatial relationships between level components.
+The output of this approach is a blended probabilistic model that can be used for generation and evaluation.
+The playable experience is a set of generated output from these blended models, along with their relative evaluations.
+
+We first introduced these probabilistc models in "Towards Game Level Generation from Gameplay Videos" [1].
+They are derived via a hierarchical, unsupervised clustering method that learns styles of levels and of level components from gameplay video.
+We presented a concept blending extension to these probabilistic models in "Learning to Blend Computer Game Levels" [2].
+Concept blending describes a process of merging disparate concepts into a blended whole, generally via mapping components of two concepts onto one another in order to reach some "target" concept.
+We make use of analogical reasoning to map relationships from one probabilistic model onto another in order to reach a specified target.
+The levels present in this demo represent the output of conceptually blended models with a variety of targets, including levels from the game "Super Mario Bros.: The Lost Levels" and more abstract specifications such as "underwater castle".
+
+We encode the levels within a new, open-source Super Mario Bros. Unity engine.
+The engine allows us to encode levels that could not previously be played, including underwater levels, castle levels, and our own conceptually blended output.
+In addition the engine allows drag-and-drop changes to levels, multiple players, and multiple "skins" for each level (including Super Mario Bros. and Super Mario World).
+We hope that this engine will benefit the broader Game AI community.
+
+To the best of our knowledge, this represents the first time that conceptually blended video game levels have been made playable at a public event.
+Despite the popularity of automatic level generation as a research topic, it is fairly unusual for the output of generators to be made publicly playable.
+We hope that this demonstration inspires more level generation researchers to make output that is publicly playable.
